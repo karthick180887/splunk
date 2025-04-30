@@ -1,0 +1,30 @@
+sudo ./splunk init shcluster-config -auth karthick1808:Welcome@12345 \
+-mgmt_uri https://10.0.7.122:8089 \
+-replication_port 9100 \
+-replication_factor 3 \
+-conf_deploy_fetch_uri http://10.0.7.121:8089 \
+-secret '$7$awXm9e/DpmerRBvAv1fyJzpzuxDi639/XMukCfXV9z8dFJAdowfADg==' \
+-shcluster_label cluster_1
+
+
+sudo ./splunk init shcluster-config -auth karthick1808:Welcome@12345 \
+-mgmt_uri https://10.0.7.123:8089 \
+-replication_port 9100 \
+-replication_factor 3 \
+-conf_deploy_fetch_uri http://10.0.7.121:8089 \
+-secret '$7$awXm9e/DpmerRBvAv1fyJzpzuxDi639/XMukCfXV9z8dFJAdowfADg==' \
+-shcluster_label cluster_1
+
+sudo ./splunk init shcluster-config -auth karthick1808:Welcome@12345 \
+-mgmt_uri https://10.0.7.124:8089 \
+-replication_port 9100 \
+-replication_factor 3 \
+-conf_deploy_fetch_uri http://10.0.7.121:8089 \
+-secret '$7$awXm9e/DpmerRBvAv1fyJzpzuxDi639/XMukCfXV9z8dFJAdowfADg==' \
+-shcluster_label cluster_1
+
+
+sudo ./splunk bootstrap shcluster-captain \
+-servers_list "https://10.0.7.122:8089,https://10.0.7.123:8089" \
+-auth karthick1808:Welcome@12345 \
+-secret '$7$awXm9e/DpmerRBvAv1fyJzpzuxDi639/XMukCfXV9z8dFJAdowfADg=='
